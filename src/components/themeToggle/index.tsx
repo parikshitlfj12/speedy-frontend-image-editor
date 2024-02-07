@@ -13,5 +13,5 @@ export default function ThemeToggle({}: Props) {
     { label: "Desert Oasis", onClick: () => changeTheme("theme3") },
   ];
 
-  return <Dropdown items={dropdownItems} label="Select Theme" />;
+  return <Dropdown items={dropdownItems} />;
 }

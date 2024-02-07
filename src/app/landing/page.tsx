@@ -8,7 +8,7 @@ type Props = {};
 export default function page({}: Props) {
   return (
     <div className="container-fluid mx-auto">
-      <div className="flex flex-wrap justify-between gap-x-2">
+      <div className="flex flex-wrap justify-between">
         <div className="w-full md:w-2/12">
           <LeftComponent />
         </div>

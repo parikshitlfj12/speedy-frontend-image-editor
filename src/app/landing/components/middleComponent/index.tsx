@@ -85,7 +85,7 @@ const MiddleComponent: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 shadow-md">
       {/* Rejection error message */}
       {fileRejections.length ? (
         <div

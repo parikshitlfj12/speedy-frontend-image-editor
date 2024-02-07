@@ -6,15 +6,15 @@ html[data-theme="theme1"] {
 }
 
 html[data-theme="theme2"] {
-  --color-primary: #fe5829;
-  --color-secondary: #87d1ff;
-  --color-buttons: #fe5829;
-  --color-typography: ##fe5829;
+  --color-primary: #aa00ff;
+  --color-secondary: #FF4500;
+  --color-buttons: #5c005c;
+  --color-typography: #fff;
 }
 
 html[data-theme="theme3"] {
-  --color-primary: #fe5829;
-  --color-secondary: #7d5e36;
-  --color-buttons: #fe5829;
-  --color-typography: #7d5e36;
+  --color-primary: #8B008B;
+  --color-secondary: #FF6347;
+  --color-buttons: #FF6347;
+  --color-typography: #000;
 }

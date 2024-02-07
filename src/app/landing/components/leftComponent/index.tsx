@@ -7,31 +7,33 @@ import {
 } from "react-icons/ai";
 import { RiDeleteBin7Line } from "react-icons/ri";
 
-type Props = {};
+const MenuItem = ({
+  icon,
+  text,
+}: {
+  icon: React.JSX.Element;
+  text: string;
+}) => (
+  <div className="flex items-center gap-x-1">
+    {icon}
+    <span className="text-typography text-base font-semibold">{text}</span>
+  </div>
+);
 
-export default function index({}: Props) {
+const index = () => {
+  const menuItems = [
+    { icon: <AiOutlineHome className="text-buttons text-lg" />, text: "Home" },
+    { icon: <AiFillFolderOpen />, text: "My Files" },
+    { icon: <AiOutlineClockCircle />, text: "Recent" },
+    { icon: <AiOutlineSetting />, text: "Settings" },
+    { icon: <RiDeleteBin7Line />, text: "Recycle bin" },
+  ];
+
   return (
-    <div className="p-5">
-      <div className="flex items-center cursor-pointer gap-x-1">
-        <AiOutlineHome className="text-buttons text-lg" />
-        <span className="text-typography"> Home</span>
-      </div>
-      <div className="flex items-center gap-x-1">
-        <AiFillFolderOpen className="text-typography" />
-        <span className="text-typography"> My Files</span>
-      </div>
-      <div className="flex items-center gap-x-1">
-        <AiOutlineClockCircle className="text-typography" />
-        <span className="text-typography"> Recent</span>
-      </div>
-      <div className="flex items-center gap-x-1">
-        <AiOutlineSetting className="text-typography" />
-        <span className="text-typography"> Settings</span>
-      </div>
-      <div className="flex items-center gap-x-1">
-        <RiDeleteBin7Line className="text-typography" />
-        <span className="text-typography"> Recycle bin</span>
-      </div>
+    <div className="p-5 shadow-md">
+      {menuItems.map((item, index) => (
+        <MenuItem key={index} icon={item.icon} text={item.text} />
+      ))}
 
       <div className="mt-12 text-typography">
         <b>25.32 GB</b> used of 1TB <br />
@@ -47,4 +49,6 @@ export default function index({}: Props) {
       </div>
     </div>
   );
-}
+};
+
+export default index;
