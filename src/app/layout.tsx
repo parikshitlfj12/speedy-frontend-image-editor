@@ -14,22 +14,26 @@ export default function RootLayout({
 }>) {
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname == "/") router.push("/landing");
+  }, []);
+
   useEffect(() => {
     const user = localStorage.getItem("user");
     if (!user) {
-      console.log(pathname)
       if (pathname == "/login") router.push("/login");
       if (pathname == "/signup") router.push("/signup");
       else router.push("/login");
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <html lang="en">
       <head>
         <title>Speedy Assessment</title>
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <Navbar />
         {children}
       </body>

@@ -2,6 +2,7 @@
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import ThemeToggle from "../themeToggle";
 
 const getMenuItems: (
   router: AppRouterInstance,
@@ -55,10 +56,6 @@ const getMenuItems: (
   ];
 };
 
-const ToggleComponent = () => {
-  return <div>Theme Toggle</div>;
-};
-
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -70,7 +67,6 @@ const Navbar: React.FC = () => {
   const menuItems = getMenuItems(router, setIsUserLoggedIn);
   return (
     <nav className="bg-gray-800 p-4">
-      <ToggleComponent />
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-lg">Speedy Image Editor</div>
         <ul className="flex space-x-4">
@@ -87,6 +83,9 @@ const Navbar: React.FC = () => {
                 </a>
               </li>
             ))}
+          <li key={"Theme Toggle"}>
+            <ThemeToggle />
+          </li>
         </ul>
       </div>
     </nav>
