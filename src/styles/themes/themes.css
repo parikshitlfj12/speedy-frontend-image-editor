@@ -1,0 +1,20 @@
+html[data-theme="theme1"] {
+  --color-primary: #2d2d2d; /* background*/
+  --color-secondary: #fff;
+  --color-buttons: #fe5829;
+  --color-typography: #fff;
+}
+
+html[data-theme="theme2"] {
+  --color-primary: #fe5829;
+  --color-secondary: #87d1ff;
+  --color-buttons: #fe5829;
+  --color-typography: ##fe5829;
+}
+
+html[data-theme="theme3"] {
+  --color-primary: #fe5829;
+  --color-secondary: #7d5e36;
+  --color-buttons: #fe5829;
+  --color-typography: #7d5e36;
+}

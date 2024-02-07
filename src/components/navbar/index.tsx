@@ -3,6 +3,8 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import ThemeToggle from "../themeToggle";
+import Speedy_Image from "../../assets/images/speedy_icon.svg";
+import Image from "next/image";
 
 const getMenuItems: (
   router: AppRouterInstance,
@@ -66,16 +68,19 @@ const Navbar: React.FC = () => {
 
   const menuItems = getMenuItems(router, setIsUserLoggedIn);
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-lg">Speedy Image Editor</div>
-        <ul className="flex space-x-4">
+    <nav className="bg-primary p-4 mb-4">
+      <div className="container-fluid  flex justify-between items-center">
+        <div className="">
+          <Image src={Speedy_Image} alt="Speedy_Image" className="h-12 w-28" />
+        </div>
+
+        <ul className="flex space-x-4 items-center">
           {menuItems
             .filter((item) => item.isUserLoggedIn === isUserLoggedIn)
             .map((item) => (
               <li key={item.id}>
                 <a
-                  className="text-white hover:text-gray-300"
+                  className="text-typography"
                   style={{ cursor: "pointer" }}
                   onClick={item.onClick}
                 >

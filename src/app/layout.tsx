@@ -33,7 +33,7 @@ export default function RootLayout({
       <head>
         <title>Speedy Assessment</title>
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} bg-primary`}>
         <Navbar />
         {children}
       </body>

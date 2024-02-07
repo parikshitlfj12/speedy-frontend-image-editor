@@ -37,10 +37,10 @@ const LoginComponent: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Login</h2>
+    <div className="max-w-md mx-auto mt-8 p-6 bg-primary rounded-md shadow-xl">
+      <h2 className="text-2xl text-typography font-semibold mb-4">Login</h2>
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">
+        <label className="block text-sm font-medium text-typography">
           Username:
         </label>
         <input
@@ -51,7 +51,7 @@ const LoginComponent: React.FC = () => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">
+        <label className="block text-sm font-medium text-typography">
           Password:
         </label>
         <input
@@ -63,7 +63,7 @@ const LoginComponent: React.FC = () => {
       </div>
       <button
         onClick={handleLogin}
-        className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+        className="bg-buttons text-typography py-2 px-10 rounded-md"
       >
         Login
       </button>

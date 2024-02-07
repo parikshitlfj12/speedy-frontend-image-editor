@@ -7,10 +7,11 @@ type Props = {};
 
 export default function ThemeToggle({}: Props) {
   const dropdownItems = [
-    { label: "theme1", onClick: () => changeTheme("theme1") },
-    { label: "theme2", onClick: () => changeTheme("theme2") },
-    { label: "theme3", onClick: () => changeTheme("theme3") },
+    { label: "Light Serenity", onClick: () => changeTheme("") },
+    { label: "Dark Breeze", onClick: () => changeTheme("theme1") },
+    { label: "Forest Elegance", onClick: () => changeTheme("theme2") },
+    { label: "Desert Oasis", onClick: () => changeTheme("theme3") },
   ];
 
-  return <Dropdown items={dropdownItems} />;
+  return <Dropdown items={dropdownItems} label="Select Theme" />;
 }

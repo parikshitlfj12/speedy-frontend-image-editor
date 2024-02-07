@@ -1,29 +1,29 @@
 import { Fragment } from "react";
 import { Menu } from "@headlessui/react";
-import { FiChevronDown } from "react-icons/fi";
+import { FiMoreVertical } from "react-icons/fi"; 
 
 interface DropdownProps {
   items: { label: string; onClick: () => void }[];
+  label?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ items }) => {
+const Dropdown: React.FC<DropdownProps> = ({ items, label = "Options" }) => {
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="bg-buttons text-typography inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2">
+    <Menu>
+      <Menu.Button className="text-typography inline-flex justify-center w-full px-4 py-2">
         <span className="flex items-center">
-          Options
-          <FiChevronDown className="ml-2 h-5 w-5" />
+          <FiMoreVertical className="h-5 w-5 text-buttons " /> 
         </span>
       </Menu.Button>
 
-      <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-primary divide-y divide-gray-100 rounded-md shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
         {items.map((item, index) => (
           <Menu.Item key={index}>
             {({ active }) => (
               <button
                 onClick={item.onClick}
                 className={`${
-                  active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                  active ? "bg-secondary text-primary" : "text-typography"
                 } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
               >
                 {item.label}
