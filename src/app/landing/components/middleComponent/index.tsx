@@ -100,7 +100,7 @@ const MiddleComponent: React.FC = () => {
       {/* Dropzone to browse or drag and drop image */}
       <div {...getRootProps()} className="border-2 border-dashed p-6">
         <input {...getInputProps()} />
-        <p className="text-lg">
+        <p className="text-lg text-typography">
           Click or drag and drop an image here to upload.
         </p>
       </div>
@@ -108,42 +108,38 @@ const MiddleComponent: React.FC = () => {
       {/* The edited image preview and download button */}
       {image && (
         <div className="mt-8">
-          
-          <h3 className="text-lg font-medium">Text Overlay</h3>
+          <h3 className="text-lg font-medium text-typography">Text Overlay</h3>
 
           {/* Enter text section */}
           <div className="mt-4">
-            <label htmlFor="text" className="block font-medium">
-              Text:
-            </label>
+            <label className="font-medium text-typography">Text:</label>
             <input
               type="text"
-              id="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Enter text"
-              className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
+              className="mt-2 px-3 py-2  rounded-md w-full focus:outline-none "
             />
           </div>
 
           {/* Font Size Section */}
           <div className="mt-4">
-            <label htmlFor="fontSize" className="block font-medium">
-              Font Size:
-            </label>
+            <label className="font-medium text-typography">Font Size:</label>
             <input
               type="number"
-              id="fontSize"
               value={fontSize}
               onChange={(e) => setFontSize(Number(e.target.value))}
               min="1"
-              className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
+              className="mt-2 px-3 py-2  rounded-md w-full focus:outline-none"
             />
           </div>
 
           {/* Font color Section */}
           <div className="mt-4">
-            <label htmlFor="fontColor" className="block font-medium">
+            <label
+              htmlFor="fontColor"
+              className="block text-typography font-medium"
+            >
               Font Color:
             </label>
             <input
@@ -151,13 +147,13 @@ const MiddleComponent: React.FC = () => {
               id="fontColor"
               value={fontColor}
               onChange={(e) => setFontColor(e.target.value)}
-              className="mt-2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              className="mt-2 px-3 py-2 rounded-md"
             />
           </div>
 
           {/* Positioning Section */}
           <div className="mt-4">
-            <label htmlFor="textX" className="block font-medium">
+            <label htmlFor="textX" className="text-typography font-medium">
               Text X Position:
             </label>
             <input
@@ -171,10 +167,12 @@ const MiddleComponent: React.FC = () => {
               max="100"
               className="mt-2 w-full"
             />
-            <span className="block mt-1">{textPosition.x}%</span>
+            <span className="block mt-1 text-typography">
+              {textPosition.x}%
+            </span>
           </div>
           <div className="mt-4">
-            <label htmlFor="textY" className="block font-medium">
+            <label htmlFor="textY" className="text-typography font-medium">
               Text Y Position:
             </label>
             <input
@@ -188,12 +186,14 @@ const MiddleComponent: React.FC = () => {
               max="100"
               className="mt-2 w-full"
             />
-            <span className="block mt-1">{textPosition.y}%</span>
+            <span className="block mt-1 text-typography">
+              {textPosition.y}%
+            </span>
           </div>
 
           {/* Edited Image Preview Section */}
           <div className="mt-4">
-            <p className="font-medium">Preview:</p>
+            <p className="font-medium text-typography">Preview:</p>
             <div
               className="relative max-w-full max-h-64 overflow-hidden mt-2"
               style={{ aspectRatio: "1/1" }}
@@ -212,23 +212,21 @@ const MiddleComponent: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Download Edited Image Button */}
           <div className="mt-4">
             <button
               onClick={downloadImage}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-              style={{
-                backgroundColor: "rgb(254 88 41/var(--tw-text-opacity))",
-                color: "white",
-              }}
+              className="bg-buttons font-bold py-2 px-4 rounded inline-flex items-center"
             >
               <svg
-                className="fill-current w-4 h-4 mr-2"
+                className="fill-primary w-4 h-4 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
                 <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
               </svg>
-              <span>Download Edited Image</span>
+              <span className="text-typography">Download Edited Image</span>
             </button>
           </div>
         </div>
